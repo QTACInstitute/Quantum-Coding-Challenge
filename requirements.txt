@@ -1,0 +1,12 @@
+qiskit==2.6.2
+qiskit-aer==0.18.2
+qiskit-algorithms==0.4.0
+qiskit-optimization==0.7.0
+qiskit-machine-learning==0.9.1
+numpy
+pandas
+scipy
+matplotlib
+networkx
+scikit-learn
+pylatexenc        # needed by circuit.draw("mpl"); not installed on the build machine

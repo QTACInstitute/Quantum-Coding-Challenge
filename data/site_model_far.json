@@ -1,0 +1,56 @@
+{
+ "name": "CO2 site model far",
+ "description": "Invented two-orbital donor-acceptor model of CO2 on an open metal site (teaching model, not ab initio). Two electrons; Jordan-Wigner, spin orbitals [C_up, M_up, C_down, M_down]. e_exact is the ground energy in the one-up, one-down sector (the physical answer); e_min_full_matrix is the lowest eigenvalue of the whole 16x16 matrix, which belongs to a 3-electron state.",
+ "geometry": {
+  "R": null,
+  "unit": "angstrom"
+ },
+ "basis": "model",
+ "active_space": {
+  "electrons": 2,
+  "spatial_orbitals": 2
+ },
+ "mapping": "jordan-wigner",
+ "num_qubits": 4,
+ "paulis": [
+  "IIII",
+  "IIIZ",
+  "IIZI",
+  "IZII",
+  "IZIZ",
+  "ZIII",
+  "ZIZI"
+ ],
+ "coeffs": [
+  -0.9,
+  0.375,
+  -0.025,
+  0.375,
+  0.075,
+  -0.025,
+  0.125
+ ],
+ "shift": 0.0,
+ "hf_x_qubits": [
+  0,
+  2
+ ],
+ "init_x_qubits": [
+  0,
+  2
+ ],
+ "e_hf": -1.5,
+ "e_exact": -1.5,
+ "e_fci_full": null,
+ "e_exact_sector": -1.5,
+ "e_min_full_matrix": -1.7,
+ "t": 0.0,
+ "V": 0.0,
+ "R": null,
+ "generators": [],
+ "generated_with": {
+  "qiskit": "2.6.2",
+  "qiskit_nature": "0.8.0"
+ },
+ "binding_incl_V_mHa": 0.0
+}

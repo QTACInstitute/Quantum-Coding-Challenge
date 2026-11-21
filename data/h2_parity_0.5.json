@@ -1,0 +1,71 @@
+{
+ "name": "H2 R=0.5",
+ "description": "Hydrogen molecule, STO-3G, the whole molecule (2 electrons, 2 orbitals), parity-mapped to 2 qubits.",
+ "geometry": {
+  "atom": "H 0 0 0; H 0 0 0.5",
+  "unit": "angstrom",
+  "R": 0.5
+ },
+ "basis": "sto3g",
+ "active_space": {
+  "electrons": 2,
+  "spatial_orbitals": 2,
+  "orbitals": null
+ },
+ "mapping": "parity, two-qubit reduction",
+ "num_qubits": 2,
+ "paulis": [
+  "II",
+  "IZ",
+  "XX",
+  "ZI",
+  "ZZ"
+ ],
+ "coeffs": [
+  -0.947707877,
+  0.5830796255,
+  0.1688702277,
+  -0.5830796255,
+  -0.0125164316
+ ],
+ "shift": 1.0583544218,
+ "hf_x_qubits": [
+  0
+ ],
+ "e_hf": -1.0429962745,
+ "e_exact": -1.0551597945,
+ "e_fci_full": -1.0551597945,
+ "generators": [
+  {
+   "paulis": [
+    "IY"
+   ],
+   "coeffs": [
+    1.0
+   ]
+  },
+  {
+   "paulis": [
+    "YI"
+   ],
+   "coeffs": [
+    -1.0
+   ]
+  },
+  {
+   "paulis": [
+    "XY",
+    "YX"
+   ],
+   "coeffs": [
+    -0.5,
+    0.5
+   ]
+  }
+ ],
+ "generated_with": {
+  "qiskit": "2.6.2",
+  "qiskit_nature": "0.8.0",
+  "pyscf": "2.15.0"
+ }
+}
