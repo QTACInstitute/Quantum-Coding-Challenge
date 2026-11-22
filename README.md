@@ -1,11 +1,11 @@
 # Quantum Journey from Energy Source to Sustainability · رحلة الكم من مصدر الطاقة إلى الاستدامة
-### تحدي الحوسبة الكمية 2026 · KACST Qiskit Fall Fest 2026, Riyadh · 22–23 November
+### تحدي الحوسبة الكمية 2026 · Quantum Computing Challenge 2026, Riyadh · 22–23 November
 
 *Prepared by Ahmed Elghadban, [Quantumy](https://quantumy.ai).*<br><sub>Reviewed by Ola Tarig.</sub>
 
-**«من المنبع إلى المصباح»** · From the wellspring to the lamp.
+**«من المصدر إلى استخدام الطاقة»** · From the wellspring to the lamp.
 
-Energy makes one journey before it lights a lamp: it is found, it is moved, it is stored and used. Ten teams each take one moment of that journey, a problem that is hard for ordinary computers at full scale, and learn one quantum algorithm on a small example. The four stops are **المنبع Source · الطريق Move · المخزن Store · المصباح Use**. Each team builds a Qiskit notebook and a product **in Arabic** that teaches its use case and its algorithm together.
+Energy makes one journey before it lights a lamp: it is found, it is moved, it is stored and used. Ten teams each take one moment of that journey, a problem that is hard for ordinary computers at full scale, and learn one quantum algorithm on a small example. The four stops are **المصدر Source · الطريق Move · المخزن Store · استخدام الطاقة Use**. Each team builds a Qiskit notebook and a product that teaches its use case and its algorithm together.
 
 ![The four stops](assets/stop_map.png)
 
@@ -53,7 +53,7 @@ Every notebook has the same seven sections.
 | 2 · Made small | The toy instance; the classical baseline runs first | Day 1 |
 | 3 · The algorithm | The idea, then guided Qiskit cells and **three team tasks** (T1 warm-up, T2 core step, T3 stretch) | Day 2 |
 | 4 · Compare | Quantum against classical; what the toy shows and does not show | Day 2 |
-| 5 · Build the explainer | The brief for your Arabic product (up to 5 minutes, any format) | Day 2 |
+| 5 · Build the explainer | The brief for your product (up to 5 minutes, any format except PowerPoint) | Day 2 |
 | 6 · Pitch | The 5-minute structure, likely questions, a checklist | Day 2 |
 
 Each task cell starts with `# TODO (team) Tn` and is followed by a `# Self-check` cell of plain `assert`s with readable messages. The starter notebook stops with `NotImplementedError("T1: ...")` at the first task you have not done. That is intended.
@@ -68,19 +68,27 @@ In notebooks 02, 03 and 04, task T2 comes with two routes. The **easier route** 
 
 ## 4 · The rubric
 
+**A) In-person attendees: group effort**
+
 | Part | Weight | Fed by |
 |---|---|---|
 | Qiskit integration and code | 10% | Section 3, your completed notebook |
-| Product (in Arabic, at most 5 minutes) | 50%: accuracy 17, conceptual insight in Arabic 17, creativity 11, execution 5 | Sections 1 and 2 (accuracy), 3 and 4 (insight), 5 (creativity, execution) |
+| Product (any format except PowerPoint .pptx, at most 5 minutes; Arabic is not required) | 50% | Section 5 |
 | Presentation (5 minutes) | 40% | Section 6 |
+
+The product is a group effort: the whole team plans, builds and presents it together.
+
+**B) Online attendees: coding**
+
+The coding is worth **100 points**. You work individually and solve one challenge.
 
 ## 5 · The honesty rule
 
 As of November 2026 nobody has shown a classically benchmarked quantum advantage on any of these ten problems. Say clearly what your small example shows and what it does not show, and run the classical baseline first.
 
-## 6 · Arabic terminology
+## 6 · Arabic terminology (optional)
 
-Use the glossary cell at the end of section 3 of your notebook, and [quantabic.com](https://quantabic.com). Use Quantabic's terms where they exist. Glossary entries marked tier I are proposals that still need checking against Quantabic. The Arabic in your product is yours.
+Arabic is optional. If you build or present your product in Arabic, use the glossary cell at the end of section 3 of your notebook, and [quantabic.com](https://quantabic.com). Use Quantabic's terms where they exist. Glossary entries marked tier I are proposals that still need checking against Quantabic. The Arabic in your product is yours.
 
 ## 7 · The shared helper package `qff/`
 
