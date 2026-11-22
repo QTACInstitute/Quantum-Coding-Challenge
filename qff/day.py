@@ -84,10 +84,10 @@ def show_day(stop=None, challenge=None):
 
 SETUP_CODE = '''# Setup: run me first. On Colab this clones the repo and installs the pinned packages (about 1 minute).
 import sys, os, subprocess
-if "google.colab" in sys.modules and not os.path.exists("Quantum-Coding-Challenge"):
-    subprocess.run(["git", "clone", "-q", "https://github.com/QTACInstitute/Quantum-Coding-Challenge.git"], check=True)
-    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "Quantum-Coding-Challenge/requirements.txt"], check=True)
-ROOT = "Quantum-Coding-Challenge" if os.path.exists("Quantum-Coding-Challenge/qff") else ".."
+if "google.colab" in sys.modules and not os.path.exists("Quantum-Computing-Challenge"):
+    subprocess.run(["git", "clone", "-q", "https://github.com/QTACInstitute/Quantum-Computing-Challenge.git"], check=True)
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "Quantum-Computing-Challenge/requirements.txt"], check=True)
+ROOT = "Quantum-Computing-Challenge" if os.path.exists("Quantum-Computing-Challenge/qff") else ".."
 sys.path.insert(0, ROOT)
 import warnings; warnings.filterwarnings("ignore")
 import numpy as np, matplotlib.pyplot as plt

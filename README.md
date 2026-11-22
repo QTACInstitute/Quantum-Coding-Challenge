@@ -15,16 +15,16 @@ Team number = challenge number.
 
 | Team | Stop | Use case | Algorithm | Notebook |
 |---|---|---|---|---|
-| 1 | Source | Seismic imaging, feature sharpening | Quantum Hadamard edge detection | [01](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/01_source_seismic_edges.ipynb) |
-| 2 | Source | Wind farm layout | VQE | [02](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/02_source_wind_farm_vqe.ipynb) |
-| 3 | Move | Grid sensor placement | QAOA | [03](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/03_move_grid_sensors_qaoa.ipynb) |
-| 4 | Move | LNG ship routing | QAOA | [04](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/04_move_lng_routing_qaoa.ipynb) |
-| 5 | Move | Unit commitment | Grover adaptive search | [05](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/05_move_unit_commitment_grover.ipynb) |
-| 6 | Store | Battery cathode chemistry | VQE | [06](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/06_store_battery_vqe.ipynb) |
-| 7 | Store | Hydrogen electrolysis catalyst | QPE | [07](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/07_store_hydrogen_qpe.ipynb) |
-| 8 | Store | Carbon-capture material | QPE | [08](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/08_store_carbon_capture_qpe.ipynb) |
-| 9 | Use | Desalination scheduling | Grover adaptive search | [09](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/09_use_desalination_grover.ipynb) |
-| 10 | Use | EV fleet (V2G) | Quantum kernel classifier | [10](https://colab.research.google.com/github/QTACInstitute/Quantum-Coding-Challenge/blob/main/notebooks/10_use_ev_fleet_kernel.ipynb) |
+| 1 | Source | Seismic imaging, feature sharpening | Quantum Hadamard edge detection | [01](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/01_source_seismic_edges.ipynb) |
+| 2 | Source | Wind farm layout | VQE | [02](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/02_source_wind_farm_vqe.ipynb) |
+| 3 | Move | Grid sensor placement | QAOA | [03](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/03_move_grid_sensors_qaoa.ipynb) |
+| 4 | Move | LNG ship routing | QAOA | [04](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/04_move_lng_routing_qaoa.ipynb) |
+| 5 | Move | Unit commitment | Grover adaptive search | [05](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/05_move_unit_commitment_grover.ipynb) |
+| 6 | Store | Battery cathode chemistry | VQE | [06](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/06_store_battery_vqe.ipynb) |
+| 7 | Store | Hydrogen electrolysis catalyst | QPE | [07](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/07_store_hydrogen_qpe.ipynb) |
+| 8 | Store | Carbon-capture material | QPE | [08](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/08_store_carbon_capture_qpe.ipynb) |
+| 9 | Use | Desalination scheduling | Grover adaptive search | [09](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/09_use_desalination_grover.ipynb) |
+| 10 | Use | EV fleet (V2G) | Quantum kernel classifier | [10](https://colab.research.google.com/github/QTACInstitute/Quantum-Computing-Challenge/blob/main/notebooks/10_use_ev_fleet_kernel.ipynb) |
 
 The links open the notebook in Google Colab (they work once the notebooks are on the `main` branch).
 
@@ -102,32 +102,7 @@ qff.quantum.qaoa_energy(ansatz, diag)     # theta -> <C>, exact
 qff.chem.load_hamiltonian(f"{DATA}/lih_parity_1.6.json")
 ```
 
-## 8 · For mentors and notebook builders
-
-- **Layout.** `solutions/NN_..._solution.ipynb` is the source of truth. `notebooks/NN_....ipynb` (what teams open) is **generated**; never edit it by hand.
-- **Solution markers.** Wrap each team answer like this:
-  ```python
-  # TODO (team) T2: build the cost Hamiltonian from the QUBO
-  ### STARTER: cost_op = None              # optional; repeat the line for several stub lines
-  ### BEGIN SOLUTION
-  cost_op, offset = qubo.to_ising()
-  ### END SOLUTION
-  ```
-  With no `### STARTER:` line the stub is `raise NotImplementedError("T2: fill this in")`. Cells tagged `solution-only` (instructor notes) are dropped from starters. Tag the last code cell of section 4 `acceptance` and the glossary cell `glossary`.
-- **Start a new notebook from the template.** `templates/template_solution.ipynb` holds the setup cell, header, section 0, the shapes of sections 1 and 4, the shared sections 5 and 6, the glossary and the optional IBM cell. `python tools/make_template.py` rebuilds it; `tools/nbkit.py` builds notebooks from Python (see its docstring).
-- **Generate starters.** `python tools/make_starters.py` (or `... 3 5` for two notebooks).
-- **Test.** `pip install -r requirements-dev.txt`, then:
-  ```
-  python tools/run_tests.py            # self-tests, data files, template, every solution notebook present
-  python tools/run_tests.py 3 5        # only notebooks 3 and 5
-  python tools/run_tests.py data       # only the data files (also: selftest, template)
-  python -m qff.selftest               # only the helper-package tests
-  ```
-  For each notebook: the starter on disk equals the regenerated one, the solution runs in under 180 s, the starter stops at T1, and the structure is right (seven headings in order, exactly three `# TODO (team) T` markers, glossary and acceptance cells, no credentials).
-- **Regenerate data** (needs `requirements-dev.txt`): `python tools/generate_chemistry.py` (LiH and H2, needs qiskit-nature and PySCF), `python tools/generate_site_model.py`, `python tools/generate_v2g_data.py`. All are deterministic; `run_tests.py data` checks that they reproduce the committed files byte for byte. The notebook 8 site model uses **invented parameters** and says so.
-- **Branches.** Build on `dev` (has `solutions/`). `main`, which teams clone, must not contain `solutions/` until the pitches are over. `python tools/make_starters.py --release DIR` exports the public tree without `solutions/`, `templates/` or the mentor tools.
-
-## 9 · Credits and sources
+## 8 · Credits and sources
 
 - Prepared by **Ahmed Elghadban**, [Quantumy](https://quantumy.ai).
   - Reviewed and tested by Ola Tarig.
