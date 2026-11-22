@@ -6,10 +6,10 @@ show_day(stop, challenge) draws section 0.  The other functions return Markdown 
 from html import escape
 
 STOPS = [
-    {"n": 1, "ar": "المنبع", "en": "Source"},
+    {"n": 1, "ar": "المصدر", "en": "Source"},
     {"n": 2, "ar": "الطريق", "en": "Move"},
     {"n": 3, "ar": "المخزن", "en": "Store"},
-    {"n": 4, "ar": "المصباح", "en": "Use"},
+    {"n": 4, "ar": "استخدام الطاقة", "en": "Use"},
 ]
 
 CHALLENGES = [
@@ -97,7 +97,7 @@ DATA = os.path.join(ROOT, "data")'''
 
 HEADER_MD = '''# {n} · {title}
 ### {ar} · {stop_en} — رحلة الكم من مصدر الطاقة إلى الاستدامة · Quantum Journey from Energy Source to Sustainability
-*KACST Qiskit Fall Fest 2026, Riyadh · Team {n} · Prepared by Ahmed Elghadban, Quantumy*<br><sub>Reviewed by Ola Tarig</sub>
+*Quantum Computing Challenge 2026, Riyadh · Team {n} · Prepared by Ahmed Elghadban, Quantumy*<br><sub>Reviewed by Ola Tarig</sub>
 
 | | |
 |---|---|
@@ -108,21 +108,24 @@ HEADER_MD = '''# {n} · {title}
 | Day 2 | sections 3–6, build, pitch |'''
 
 SECTION0_MD = '''## 0 · The journey so far — رحلة الكم
-**«من المنبع إلى المصباح»** · From the wellspring to the lamp
+**«من المصدر إلى استخدام الطاقة»** · From the wellspring to the lamp
 
 Before you switch on a lamp tonight, energy will have made one journey. It is found, it is moved, it is stored, and then it is used. Ten teams follow that journey today. Each team owns one moment of it, and each moment has a problem that is hard for ordinary computers at full scale.
 
-1. **المنبع · Source.** Find the energy and decide where to harvest it: read the rock under the ground, place the turbines in the wind.
+1. **المصدر · Source.** Find the energy and decide where to harvest it: read the rock under the ground, place the turbines in the wind.
 2. **الطريق · Move.** Get it across the country: watch the grid, route the ships, decide which power stations run.
 3. **المخزن · Store.** Keep it for later, and keep carbon out of the air: batteries, hydrogen, capture materials. This is chemistry.
-4. **المصباح · Use.** Spend it well: make fresh water, charge and discharge a fleet of cars.
+4. **استخدام الطاقة · Use.** Spend it well: make fresh water, charge and discharge a fleet of cars.
 
 Your notebook is one chapter. The cell below lights your stop and lists all ten chapters so you can see who comes before and after you. When you pitch, start by saying where in the journey you are.
 
 One rule for the whole challenge: **be honest about what is real.** As of November 2026 nobody has shown a quantum computer beating the best classical method on any of these ten problems. Your job is to explain the problem, show the idea on a small example, and say clearly what the small example does and does not prove.'''
 
 SECTION5_MD = '''## 5 · Build the explainer — ابنوا المنتَج
-You now build one product, **in either Arabic or English**, that teaches a visitor your use case and your algorithm together. It is 50% of your score, and the product should be something that does not take more than 5 minutes.
+How you are scored depends on how you take part. Read your category below.
+
+### A) In-person attendees: group effort
+Your team builds **one product** together that teaches a visitor your use case and your algorithm. It is **50% of your score**. This category is a **group effort**: the whole team plans, builds, tests and presents the product together. The product does not have to be in Arabic.
 
 **Your audience:** a first-year university student who has never seen a qubit. They have three minutes.
 
@@ -132,28 +135,19 @@ You now build one product, **in either Arabic or English**, that teaches a visit
 3. What does the quantum algorithm do differently? {single_idea}
 4. How real is it today? (Use your section 4 results and the honesty statement.)
 
-**Pick any format:** it can be anything **except a presentation (.ppt file)**. It can be an interactive demo, an interactive website, or a YouTube video (or a small app, a short deck, a game, or an interactive notebook)—as long as it does not take more than 5 minutes.
+**Pick any format, except a PowerPoint presentation (.pptx).** It can be an interactive demo, an interactive website, a YouTube video, a small app, a game, or an interactive notebook, as long as it does not take more than 5 minutes.
 
 **Three ideas that fit this stop** (take one, change it, or ignore them):
 {ideas}
 
 **Use from this notebook:** {reuse}
 
-**How it is scored (Product, 50%)**
-| Criterion | Weight | What judges look for | Where it comes from |
-|---|---|---|---|
-| Accuracy | 17 | Every claim is true; the classical baseline is shown; nothing is oversold | Sections 1, 2, 4 |
-| Conceptual insight, in Arabic | 17 | A newcomer understands *why* the algorithm works, in clear Arabic | Sections 3, 4 |
-| Creativity | 11 | A fresh way to show it: metaphor, interaction, story | This section |
-| Execution | 5 | It works, it is finished, it is readable | This section |
-
 Qiskit integration and code is a separate 10%: keep your completed notebook tidy and show one cell of it.
 
-**Arabic terms.** Use the glossary cell at the end of section 3. Keep gate letters, kets and symbols in Latin (H, |0⟩, θ). Use Quantabic's terms. If a term is not in the glossary, check quantabic.com, and if it is not there either, give the English in brackets the first time.
+**Time plan for the 2 h 20 build window:** 20 min agree the story and format · 70 min build · 20 min test on someone outside the team · 30 min rehearse the pitch.
 
-**The words are yours.** Mentors can check your physics; they will not write your Arabic.
-
-**Time plan for the 2 h 20 build window:** 20 min agree the story and format · 70 min build · 20 min test on someone outside the team · 30 min rehearse the pitch.'''
+### B) Online attendees: coding
+The coding is worth **100 points**. You work **individually** and solve **one challenge**.'''
 
 SECTION6_MD = '''## 6 · Pitch — العرض
 You have **5 minutes** for your pitch and 3 minutes for questions from the judges. Presentation is 40% of your score.
@@ -163,7 +157,7 @@ You have **5 minutes** for your pitch and 3 minutes for questions from the judge
 | 0–0.5 | Where we are in the journey: stop, use case, one sentence | 1 speaker |
 | 0.5–1.5 | The problem and why it is hard at scale | |
 | 1.5–3 | The algorithm, with your toy example and one notebook cell | |
-| 3–4 | Live demo of your Arabic product | |
+| 3–4 | Live demo of your product | |
 | 4–5 | How real is it: your result against the classical baseline | |
 | 5-8 | Questions | all |
 
@@ -178,7 +172,9 @@ You have **5 minutes** for your pitch and 3 minutes for questions from the judge
 - [ ] The notebook runs top to bottom and the self-checks pass
 - [ ] Every number on screen comes from your notebook or from a named source
 - [ ] You say what the toy does not show
-- [ ] You finish the talk in 5 minutes on a timer'''
+- [ ] You finish the talk in 5 minutes on a timer
+
+**Arabic is optional.** If you want to build or present your product in Arabic, use Quantabic for the terms: start with the glossary cell at the end of section 3, which follows Quantabic's terms. If a term is not in the glossary, check quantabic.com, and if it is not there either, give the English in brackets the first time. Keep gate letters, kets and symbols in Latin (H, |0⟩, θ). The words are yours: mentors can check your physics, but they will not write your Arabic.'''
 
 GLOSSARY_COMMON = [
     ("Qubit", "كيوبت", "G"), ("Superposition", "التراكب", "G"), ("Entanglement", "التشابك", "G"),
